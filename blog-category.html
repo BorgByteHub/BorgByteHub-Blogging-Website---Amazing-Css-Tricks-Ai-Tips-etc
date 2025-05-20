@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BorgByte Hub Blog Categories - Find blogs by topic">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blogs.css">
+    <title>Blog Categories - BorgByte Hub</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="Logo" src="/images/borg-icon-192.png" alt="Logo" height="60px" />
+            <h2>BorgByte Hub</h2>
+        </div>
+        <nav class="pc-nav">
+            <ul>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="about.html">About Me</a></li>
+                <li class="nav-item"><a href="blogs.html">Blogs</a></li>
+                <li class="nav-item"><a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Side Drawer Menu -->
+        <nav id="side-menu">
+            <div class="side-profile">
+                <img src="/images/borg-icon-192.png" alt="Logo" class="side-logo" />
+                <h3>Varun Gautam</h3>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+
+        <!-- Overlay -->
+        <div id="overlay"></div>
+    </header>
+
+    <main class="blogs-container">
+        <section class="blogs-hero">
+            <h1>Blog Posts by Category</h1>
+            <div class="category-tags">
+                <button class="category-tag active" data-category="all">All</button>
+                <button class="category-tag" data-category="AI">AI</button>
+                <button class="category-tag" data-category="CSS">CSS</button>
+                <button class="category-tag" data-category="HTML">HTML</button>
+                <button class="category-tag" data-category="Portfolio">Portfolio</button>
+                <button class="category-tag" data-category="AI Tools">AI Tools</button>
+            </div>
+        </section>
+
+        <section class="blogs-grid" id="blogs-grid">
+            <!-- Blog cards will be dynamically inserted here -->
+        </section>
+    </main>
+
+    <footer class="blog-footer">
+        <p>© 2025 BorgByte Hub / Varun Gautam</p>
+    </footer>
+
+    <script>
+        // Blog data
+        const blogs = [
+            {
+                image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800",
+                imageAlt: "AI vs Human Intelligence Concept - Human and Robot Face to Face",
+                category: "AI",
+                date: "May 16, 2025",
+                title: "AI vs Humans: The Great Debate",
+                description: "Explore the fascinating comparison between artificial intelligence and human intelligence, their strengths, and how they can work together...",
+                link: "blog-human.html"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800",
+                imageAlt: "CSS code on a computer screen",
+                category: "CSS",
+                date: "May 9, 2025",
+                title: "Top CSS Tricks - Responsive, Styling",
+                description: "Explore some cool tips with Flexbox, Grid, and animations that made my UI cleaner...",
+                link: "blog-css.html"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800",
+                imageAlt: "Clean portfolio website design",
+                category: "Portfolio",
+                date: "May 5, 2025",
+                title: "How I Built & Promoted My Portfolio",
+                description: "A complete journey from coding to going live with my personal portfolio website...",
+                link: "blog-portfolio.html"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800",
+                imageAlt: "HTML code structure",
+                category: "HTML",
+                date: "May 2, 2025",
+                title: "Semantic HTML: What It Is and Why It Matters",
+                description: "Understanding semantic HTML and its importance for accessibility & SEO...",
+                link: "blog-tags.html"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800",
+                imageAlt: "AI Technology Concept",
+                category: "AI Tools",
+                date: "May 1, 2025",
+                title: "10 Best Free AI Tools for Students and Freelancers",
+                description: "Essential AI tools every student and freelancer should use in 2025...",
+                link: "blog-ai.html"
+            }
+        ];
+
+        // Function to create blog card HTML
+        function createBlogCard(blog) {
+            return `
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="${blog.image}" alt="${blog.imageAlt}">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">${blog.category}</span>
+                            <span class="blog-date">${blog.date}</span>
+                        </div>
+                        <h2>${blog.title}</h2>
+                        <p>${blog.description}</p>
+                        <a href="${blog.link}" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            `;
+        }
+
+        // Function to filter and display blogs
+        function filterBlogs(category) {
+            const blogsGrid = document.getElementById('blogs-grid');
+            blogsGrid.innerHTML = ''; // Clear current blogs
+
+            const filteredBlogs = category === 'all' 
+                ? blogs 
+                : blogs.filter(blog => blog.category === category);
+
+            filteredBlogs.forEach(blog => {
+                blogsGrid.innerHTML += createBlogCard(blog);
+            });
+        }
+
+        // Add click handlers to category tags
+        document.querySelectorAll('.category-tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                // Update active state
+                document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+
+                // Filter blogs
+                filterBlogs(tag.dataset.category);
+            });
+        });
+
+        // Initialize with all blogs
+        filterBlogs('all');
+
+        // Mobile menu functionality
+        const hamburger = document.getElementById("hamburger");
+        const sideMenu = document.getElementById("side-menu");
+        const overlay = document.getElementById("overlay");
+
+        hamburger.addEventListener("click", () => {
+            sideMenu.classList.toggle("active");
+            overlay.classList.toggle("active");
+        });
+
+        overlay.addEventListener("click", () => {
+            sideMenu.classList.remove("active");
+            overlay.classList.remove("active");
+        });
+    </script>
+</body>
+</html> 

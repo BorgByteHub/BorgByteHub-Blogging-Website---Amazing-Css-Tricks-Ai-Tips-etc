@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BorgByte Hub Blogs - Web Development, Design, and Tech Insights">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blogs.css">
+    <title>Blogs - BorgByte Hub</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="Logo" src="/images/borg-icon-192.png" alt="Logo" height="60px" />
+            <h2>BorgByte Hub</h2>
+        </div>
+        <nav class="pc-nav">
+            <ul>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="about.html">About Me</a></li>
+                <li class="nav-item"><a href="blogs.html">Blogs</a></li>
+                <li class="nav-item"><a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Side Drawer Menu -->
+        <nav id="side-menu">
+            <div class="side-profile">
+                <img src="/images/borg-icon-192.png" alt="Logo" class="side-logo" />
+                <h3>Varun Gautam</h3>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+
+        <!-- Overlay -->
+        <div id="overlay"></div>
+    </header>
+
+    <main class="blogs-container">
+        <section class="blogs-hero">
+            <h1>My Blog Posts</h1>
+          
+        </section>
+
+        <section class="blogs-grid">
+            <!-- Blog Card 1 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800" alt="AI vs Human Intelligence Concept - Human and Robot Face to Face">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category"><a href="blog-category.html?category=AI">AI</a></span>
+                        <span class="blog-date">May 16, 2025</span>
+                    </div>
+                    <h2>AI vs Humans: The Great Debate</h2>
+                    <p>Explore the fascinating comparison between artificial intelligence and human intelligence, their strengths, and how they can work together...</p>
+                    <a href="blog-human.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Blog Card 2 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800" alt="CSS code on a computer screen">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category"><a href="blog-category.html?category=CSS">CSS</a></span>
+                        <span class="blog-date">May 9, 2025</span>
+                    </div>
+                    <h2>Top CSS Tricks - Responsive, Styling</h2>
+                    <p>Explore some cool tips with Flexbox, Grid, and animations that made my UI cleaner...</p>
+                    <a href="blog-css.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Blog Card 3 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800" alt="Clean portfolio website design">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category"><a href="blog-category.html?category=Portfolio">Portfolio</a></span>
+                        <span class="blog-date">May 5, 2025</span>
+                    </div>
+                    <h2>How I Built & Promoted My Portfolio</h2>
+                    <p>A complete journey from coding to going live with my personal portfolio website...</p>
+                    <a href="blog-portfolio.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Blog Card 4 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800" alt="HTML code structure">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category"><a href="blog-category.html?category=HTML">HTML</a></span>
+                        <span class="blog-date">May 2, 2025</span>
+                    </div>
+                    <h2>Semantic HTML: What It Is and Why It Matters</h2>
+                    <p>Understanding semantic HTML and its importance for accessibility & SEO...</p>
+                    <a href="blog-tags.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Blog Card 5 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800" alt="AI Technology Concept">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category"><a href="blog-category.html?category=AI Tools">AI Tools</a></span>
+                        <span class="blog-date">May 1, 2025</span>
+                    </div>
+                    <h2>10 Best Free AI Tools for Students and Freelancers</h2>
+                    <p>Essential AI tools every student and freelancer should use in 2025...</p>
+                    <a href="blog-ai.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="blog-footer">
+        <p>© 2025 BorgByte Hub / Varun Gautam</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const sideMenu = document.getElementById("side-menu");
+        const overlay = document.getElementById("overlay");
+
+        hamburger.addEventListener("click", () => {
+            sideMenu.classList.toggle("active");
+            overlay.classList.toggle("active");
+        });
+
+        overlay.addEventListener("click", () => {
+            sideMenu.classList.remove("active");
+            overlay.classList.remove("active");
+        });
+    </script>
+</body>
+</html> 
